@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Provider as PaperProvider } from 'react-native-paper';
+import TelaCronometro from '.src/View/TelaCronometro';
+import TelaConfiguracao from '.src/View/TelaConfiguracao';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Cronômetro">
+          <Stack.Screen 
+            name="Cronômetro" 
+            component={TelaCronometro} 
+            options={{ title: 'Cronômetro' }} 
+          />
+          <Stack.Screen 
+            name="Configuração" 
+            component={TelaConfiguracao} 
+            options={{ title: 'Configuração' }} 
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
