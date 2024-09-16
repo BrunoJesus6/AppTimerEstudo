@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
-import TelaCronometro from '.src/View/TelaCronometro';
-import TelaConfiguracao from '.src/View/TelaConfiguracao';
+import TelaCronometro from '.src/view/TelaCronometro';
+import TelaConfiguracao from '.src/view/TelaConfiguracao';
 
 const Stack = createStackNavigator();
 
